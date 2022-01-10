@@ -125,8 +125,10 @@ public class HotItem {
 
         @Override
         public void open(Configuration parameters) throws Exception {
-            itemViewCountListState = getRuntimeContext().getListState(new ListStateDescriptor<>("itemViewCountListState", TypeInformation.of(new TypeHint<Tuple2<Long, Long>>() {
-            })));
+            itemViewCountListState = getRuntimeContext().getListState(
+                    new ListStateDescriptor<>("itemViewCountListState", TypeInformation.of(new TypeHint<Tuple2<Long, Long>>() {
+                    }))
+            );
         }
 
         @Override
